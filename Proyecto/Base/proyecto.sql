@@ -53,10 +53,10 @@ CREATE TABLE `cliente` (
 --
 
 INSERT INTO `cliente` (`Rut`, `Nombre`, `Giro`, `Direccion`, `Comuna`, `Ciudad`, `Region`) VALUES
-('93.457.289-7', 'Juan Jose', 'Perez Gusito', 'Av matta 123', 'Santiago', 'Santiago Centro', 'Metropolitana'),
-('26.375.498-0', 'Julio Andres', 'Gusito Gonzalo', 'Av santa rosa 123', 'La Florida', 'La Florida Central', 'Metropolitana'),
-('22.234.234-0', 'Julian', 'Jose', 'av santa rosa 123', 'Santiago', 'Santiago Centro', 'Metropolitana'),
-('12.234.234-k', 'Andrea', 'Lopez', 'arturo prat 2020', 'Estacion Central', 'Estación Central', 'Metropolitana'),
+('93.457.289-7', 'Juan Jose', 'Informatica', 'Av matta 123', 'Santiago', 'Santiago Centro', 'Metropolitana'),
+('26.375.498-0', 'Julio Andres', 'Construccion', 'Av santa rosa 123', 'La Florida', 'La Florida Central', 'Metropolitana'),
+('22.234.234-0', 'Julian', 'Retail', 'av santa rosa 123', 'Santiago', 'Santiago Centro', 'Metropolitana'),
+('12.234.234-k', 'Andrea', 'Informatica', 'arturo prat 2020', 'Estacion Central', 'Estación Central', 'Metropolitana'),
 ('22.222.222-k', 'victor aguilar', 'administacion', 'maria luisa ', 'san bernardo', 'san bernardo', 'metropolitana');
 
 -- --------------------------------------------------------
@@ -99,6 +99,7 @@ CREATE TABLE `empresa` (
 
 INSERT INTO `empresa` (`rut`, `RazonSocial`, `Giro`, `Direccion`) VALUES
 ('98.766.789-7', 'Falabella', 'Venta de Ropa', 'Av matta'),
+('11.111.111-1', 'REPI TELRAMO ELECTRONICS LTDA.', 'Informatica', 'Av Cerro el Plomo 5555'),
 ('99.988.876-7', 'Sodimac', 'Venta de materiales', 'Av santa rosa');
 
 -- --------------------------------------------------------
