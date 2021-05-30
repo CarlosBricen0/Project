@@ -1,6 +1,6 @@
 <html lang="en">
     <head>
-	<title>Administración</title>
+    <title>Administración | Factura</title>
 		<link rel="icon" type="image/jpg" href="https://www.pngarts.com/files/3/Logo-PNG-Download-Image.png" height="45px"width="45px">
 		
         <meta charset="utf-8">
@@ -20,9 +20,38 @@
     </head>
     
     <body>
-		
 	<div class="container-fluid main-container">
-		<?php include 'MenuAdmin.php'; ?>
+	<?php include 'MenuAdmin.php'; ?>
+    <?php 
+         //error_reporting(0);
+        
+
+  
+        include '../../Base/Conexion.php';
+        $cone = new Conexion();
+        $query = "SELECT RUT FROM CLIENTE";
+        $cons = $cone->query($query);
+        $cons->execute();
+        $cadena = $cons->fetchALL();
+
+
+  
+        $cone2 = new Conexion();
+        $query2 = "SELECT RUT FROM EMPRESA";
+        $cons2 = $cone2->query($query2);
+        $cons2->execute();
+        $cadena2 = $cons2->fetchALL();
+
+        $cone3 = new Conexion();
+        $query3 = "SELECT Nro , Codigo FROM PRODUCTOS";
+        $cons3 = $cone3->query($query3);
+        $cons3->execute();
+        $cadena3 = $cons3->fetchALL();
+
+
+        
+    ?>
+    
 		<br>
 		<br>
 		<br>
@@ -31,15 +60,86 @@
                 <div class="panel-heading">
                     Dashboard
                 </div>
-                <div class="panel-body">
-                   Bienvenido
+                <div class="panel-body"> 
+				<!--INICIO FORMULARIO INGRESO DATOS	-->
+				<div class="popup-inner">
+                <p>
+                <center>
+                    <form action="../../Controladores/ValidadorDocumento.php" name="Validador" method="post">
+                        <h1>Agregar Factura</h1>
+                        <table class="table-active">
+                            <tbody>
+                                <tr>
+                                    <td>Fecha Emision: </td>
+                                    <td><input type="date"  name="txtFecha"> <!-- <input type="text" name="TxtRut"class="form-control" value="" placeholder="Ej:11.111.111-k" pattern="[0-9]{1,2}.[0-9]{3}.[0-9]{3}-[0-9Kk]{1}" required title="EJ: 99.999.999-9"/> --> </td>
+                                </tr>
+                                <tr>
+                                    <td>Rut Empresa: </td>
+                                    <td>
+                                        <select name="rutEmpresa" >
+                                            <option value="0">Seleccione Rut</option>
+                                            <?php   foreach ($cadena2 as $row):  ?>
+                                                <option value="<?php echo $row[0]; ?>"><?php echo $row[0]; ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                <td>Rut Cliente: </td>
+                                    <td>
+                                        <select name="rutCliente" >
+                                        <option value="0">Seleccione Rut</option>
+                                            <?php   foreach ($cadena as $row):  ?>
+                                                <option value="<?php echo $row[0]; ?>"><?php echo $row[0]; ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Productos: </td>
+                                    <td> 
+                                    <select multiple name="productos[]">   
+                                        <option value="0">Seleccione Productos</option>
+                                        <?php   foreach ($cadena3 as $row):  ?>
+                                            <option value="<?php echo $row[0]; ?>"><?php echo $row[1]; ?></option>
+                                        <?php endforeach; ?>  
+                                    </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Referencias: </td>
+                                    <td> <input type="text" name="txtRefrencia"class="form-control" value="" required placeholder="Ingrese Referencia"/> </td>
+                                </tr>
+                                <tr>
+                                    <td>Tipo Pago: </td>
+                                    <td> 
+                                    <select name="tipoPago">
+                                        <option value="efectivo">Efectivo</option>
+                                        <option value="debito">Debito</option>
+                                        <option value="credito">Credito</option>
+                                    </select>
+                                    </td>
+                                </tr>
+                                    <td colspan="2">
+									<br>
+                                        <input type="submit" name="btnInsertFactura" value="Registrar" class="btn" />
+                                        <input type="reset" name="Btn" value="Limpiar" class="btn" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </center>
+               
+            </div>
+				<!--FINAL	-->
                 </div>
             </div>
 		</div>
 		<footer class="pull-left footer">
 			<p class="col-md-12">
 				<hr class="divider">
-				Copyright &COPY; 2021 <a href="http://www.pingpong-labs.com">Gravitano</a>
+				Copyright &COPY; 2021 <a href="http://www.pingpong-labs.com">REPI TELRAMO ELECTRONICS LTDA.</a>
 			</p>
 		</footer>
 	</div>

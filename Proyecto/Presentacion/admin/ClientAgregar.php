@@ -1,6 +1,6 @@
 <html lang="en">
     <head>
-    <title>Administración</title>
+    <title>Administración | Clientes</title>
 		<link rel="icon" type="image/jpg" href="https://www.pngarts.com/files/3/Logo-PNG-Download-Image.png" height="45px"width="45px">
 		
         <meta charset="utf-8">
@@ -36,7 +36,7 @@
                 <p>
                 <center>
                     <form action="../../Controladores/ValidadorCliente.php" name="Validador" method="post">
-                        <h1>Inicio de Sesion</h1>
+                        <h1>Agregar Cliente</h1>
                         <table class="table-active">
                             <tbody>
                                 <tr>

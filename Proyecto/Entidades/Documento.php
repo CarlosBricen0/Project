@@ -11,19 +11,19 @@
         private $fecha_emision;
         private $rut_empresa;
         private $rut_cliente;
-        private $cod_producto;
+        private $productos;
         private $referencia;
         private $tipo_pago;
         private $estado;
 
-        function __construct($numero_documento,Tipo_Documento $tipo_documento,$fecha_emision,Empresa $rut_empresa, Cliente $rut_cliente,
-         Producto $cod_producto , $referencia , $tipo_pago , $estado){
-             $this->setNumeroDocumento($numero_documento);
+        function __construct($fecha_emision,$numero_documento, $tipo_documento, $rut_empresa,  $rut_cliente,
+          $productos , $referencia , $tipo_pago , $estado){
+          
             $this->setTipoDocumento($tipo_documento);
             $this-> setFechaEmision ($fecha_emision);
             $this-> setRutEmpresa($rut_empresa);
             $this->setRutCliente($rut_cliente);
-            $this-> setCodProducto($cod_producto);
+            $this-> setProducto($productos);
             $this-> setReferencia($referencia);
             $this-> setTipoPago($tipo_pago);
             $this->setEstado($estado);
@@ -46,8 +46,8 @@
         function getFechaEmision(){
             return $this->fecha_emision;
         }
-        function getCodProducto(){
-            return $this->cod_producto;
+        function getProducto(){
+            return $this->productos;
         }
         function getReferencia(){
             return $this->referencia;
@@ -77,16 +77,13 @@
             $this-> tipo_documento = $tipo_documento;
         }
 
-        function setRutEmpresa($rut_empresa){
-            $this-> rut_empresa = $rut_empresa;
-        }
 
         function setFechaEmision($fecha_emision){
             $this-> fecha_emision = $fecha_emision;
         }
 
-        function setCodProducto($cod_producto){
-            $this-> cod_producto = $cod_producto;
+        function setProducto($productos){
+            $this-> productos = $productos;
         }
         function setReferencia($referencia){
             $this-> referencia = $referencia;

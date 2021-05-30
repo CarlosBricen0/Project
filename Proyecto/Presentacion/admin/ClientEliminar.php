@@ -1,6 +1,6 @@
 <html lang="en">
     <head>
-	<title>Administración</title>
+    <title>Administración | Clientes</title>
 		<link rel="icon" type="image/jpg" href="https://www.pngarts.com/files/3/Logo-PNG-Download-Image.png" height="45px"width="45px">
 		
         <meta charset="utf-8">
@@ -33,7 +33,7 @@
                 <div class="panel-body">
 				<!--INICIO FORMULARIO SELECCION MASIVA	-->
 				<center>
-                        <h1>Clientes</h1>
+                        <h1>Eliminar Clientes</h1>
                         <table class="table table-striped">
 						
 						<form action="../../Controladores/ValidadorCliente.php" name="Eliminar" method="post">

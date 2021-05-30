@@ -68,12 +68,10 @@ DROP TABLE IF EXISTS `documento`;
 
 CREATE TABLE `documento` (
   `id_documento` int(11) NOT NULL,
-  `numero_documento` int(11) NOT NULL,
   `tipo_documento` int(11) NOT NULL,
   `fecha_emision` date NOT NULL,
   `rut_empresa` varchar(13) COLLATE utf8_spanish_ci NOT NULL,
   `rut_cliente` varchar(13) COLLATE utf8_spanish_ci NOT NULL,
-  `cod_producto` int(11) NOT NULL,
   `referencias` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
   `tipo_pago` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `estado` varchar(20) COLLATE utf8_spanish_ci NOT NULL
@@ -107,14 +105,7 @@ INSERT INTO `empresa` (`rut`, `RazonSocial`, `Giro`, `Direccion`) VALUES
 --
 -- Estructura de tabla para la tabla `factura`
 --
-DROP TABLE IF EXISTS `factura`;
 
-CREATE TABLE `factura` (
-  `Folio` int(11) NOT NULL,
-  `FechaFactura` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
-  `rut_Cliente` varchar(13) COLLATE utf8_spanish_ci NOT NULL,
-  `rut_Empresa` varchar(13) COLLATE utf8_spanish_ci NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
 
@@ -172,6 +163,12 @@ INSERT INTO `productos` (`Nro`, `Codigo`, `Descripcion`, `Stock`, `Precio_Unitar
 (12, 'TECLA003', 'Teclado Corsair K70 MKxx', 10, '200.000', ''),
 (17, 'VENTI005', 'Papel periodico', 1, '100.000', '');
 
+
+
+CREATE TABLE `documento_producto` (
+  `id_documento` int(11) NOT NULL,
+  `id_producto` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 -- --------------------------------------------------------
 
 --

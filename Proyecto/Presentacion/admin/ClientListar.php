@@ -1,6 +1,6 @@
 <html lang="en">
     <head>
-	<title>Administración</title>
+    <title>Administración | Clientes</title>
 		<link rel="icon" type="image/jpg" href="https://www.pngarts.com/files/3/Logo-PNG-Download-Image.png" height="45px"width="45px">
 		
         <meta charset="utf-8">
